@@ -1,6 +1,8 @@
 
 package com.escapex;
 
+import com.escapex.database.DatabaseManager;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -29,6 +31,11 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
+
+        // Initialize the SQLite database
+        DatabaseManager.initializeDatabase();
+
+        // Launch JavaFX application
         launch(args);
     }
 }
