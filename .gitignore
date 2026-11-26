@@ -1,7 +1,34 @@
+
+# Java / Maven
 target/
 *.class
+*.jar
+
+# React / Node / Vite
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Logs
+logs/
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editors
 .idea/
-.vscode/
+.vscode/*
+!.vscode/extensions.json
 *.iml
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Operating system
 .DS_Store
