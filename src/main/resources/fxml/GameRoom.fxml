@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.escapex.RoomController"
+            stylesheets="@../css/style.css">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20" styleClass="top-bar">
+            <Label text="ESCAPE-X" styleClass="brand"/>
+            <Label text="FIVE CHAMBERS • ONE ESCAPE"
+                   styleClass="subtitle"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="roomCounter" text="ROOM 01 / 05"
+                   styleClass="room-counter"/>
+            <Button text="MAIN MENU"
+                    onAction="#backToMenu"
+                    styleClass="secondary-button"/>
+        </HBox>
+    </top>
+
+    <center>
+        <HBox spacing="22" styleClass="main-content">
+
+            <VBox spacing="15" HBox.hgrow="ALWAYS">
+
+                <VBox spacing="8" styleClass="heading-panel">
+                    <Label fx:id="roomNumber" text="CHAMBER 01"
+                           styleClass="accent-label"/>
+                    <Label fx:id="roomTitle"
+                           text="THE ABANDONED MANSION"
+                           styleClass="room-heading"/>
+                    <Label fx:id="roomDescription"
+                           text="Something is waiting in the darkness."
+                           wrapText="true"
+                           styleClass="description"/>
+                </VBox>
+
+                <StackPane fx:id="roomVisual"
+                           styleClass="room-visual"
+                           VBox.vgrow="ALWAYS">
+
+                    <ImageView fx:id="roomImage"
+                               fitWidth="780"
+                               fitHeight="480"
+                               preserveRatio="false"
+                               smooth="true"/>
+
+                    <VBox alignment="BOTTOM_LEFT"
+                          spacing="8"
+                          styleClass="image-overlay"
+                          mouseTransparent="true">
+                        <Label text="EXPLORE YOUR SURROUNDINGS"
+                               styleClass="accent-label"/>
+                        <Label fx:id="visualCaption"
+                               text="Every detail holds a secret."
+                               styleClass="overlay-caption"/>
+                    </VBox>
+
+                </StackPane>
+
+            </VBox>
+
+            <VBox spacing="20" prefWidth="275"
+                  styleClass="sidebar">
+
+                <VBox spacing="10">
+                    <Label text="MISSION OBJECTIVE"
+                           styleClass="section-heading"/>
+                    <Label fx:id="objectiveText"
+                           text="Discover the hidden secrets."
+                           wrapText="true"
+                           styleClass="description"/>
+                </VBox>
+
+                <Separator/>
+
+                <VBox spacing="10">
+                    <Label text="MISSION STATUS"
+                           styleClass="section-heading"/>
+                    <Label text="IN PROGRESS"
+                           styleClass="status-label"/>
+                </VBox>
+
+                <Separator/>
+
+                <VBox spacing="10">
+                    <Label text="INVENTORY"
+                           styleClass="section-heading"/>
+                    <Label text="Inventory module will be integrated by Member 6."
+                           wrapText="true"
+                           styleClass="description"/>
+                </VBox>
+
+                <VBox spacing="10" VBox.vgrow="ALWAYS">
+                    <Region VBox.vgrow="ALWAYS"/>
+                    <Label text="PUZZLE INTERACTION"
+                           styleClass="section-heading"/>
+                    <Label text="Interactive objects and puzzles will be integrated by Member 5."
+                           wrapText="true"
+                           styleClass="description"/>
+                </VBox>
+
+            </VBox>
+
+        </HBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" spacing="20"
+              styleClass="bottom-bar">
+
+            <Button text="← PREVIOUS ROOM"
+                    onAction="#previousRoom"
+                    styleClass="secondary-button"/>
+
+            <Label text="SELECT YOUR NEXT CHAMBER"
+                   styleClass="subtitle"/>
+
+            <Button text="NEXT ROOM →"
+                    onAction="#nextRoom"
+                    styleClass="primary-button"/>
+
+        </HBox>
+    </bottom>
+
+</BorderPane>

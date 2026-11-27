@@ -313,7 +313,7 @@ public class LevelSelection {
 
         if (unlocked) {
             selectButton.setOnAction(e ->
-                new GameplayScreen().show(stage)
+                new RoomScreen().show(stage)
             );
         }
 
@@ -524,4 +524,3 @@ public class LevelSelection {
             "-fx-cursor: hand;";
     }
 }
-
